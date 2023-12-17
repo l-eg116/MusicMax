@@ -8,30 +8,32 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MusicController">
    <children>
-      <TableView layoutX="14.0" layoutY="235.0" prefHeight="150.0" prefWidth="300.0">
+      <TableView fx:id="tableSongs" layoutX="20.0" layoutY="235.0" prefHeight="150.0" prefWidth="560.0">
         <columns>
-          <TableColumn editable="false" prefWidth="75.0" text="name" />
-          <TableColumn prefWidth="75.0" text="album" />
-            <TableColumn prefWidth="75.0" text="artist" />
-            <TableColumn prefWidth="75.0" text="genre" />
+          <TableColumn editable="false" prefWidth="140.0" text="name" />
+          <TableColumn prefWidth="140.0" text="album" />
+            <TableColumn prefWidth="140.0" text="artist" />
+            <TableColumn prefWidth="140.0" text="genre" />
         </columns>
       </TableView>
-      <ListView layoutX="10.0" layoutY="30.0" prefHeight="150.0" prefWidth="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="25.0" />
-      <Label layoutX="10.0" layoutY="10.0" text="Music queue" AnchorPane.leftAnchor="10.0" />
-      <Button layoutX="460.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Change playlist name" wrapText="true" />
-      <ListView layoutX="490.0" layoutY="70.0" prefHeight="120.0" prefWidth="100.0" />
-      <ListView layoutX="385.0" layoutY="40.0" prefHeight="150.0" prefWidth="100.0" />
+      <ListView fx:id="listMusicQueue" layoutX="10.0" layoutY="30.0" prefHeight="150.0" prefWidth="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="25.0" />
+      <Label fx:id="labelMusicQueue" layoutX="10.0" layoutY="10.0" text="Music queue" AnchorPane.leftAnchor="10.0" />
+      <Button fx:id="buttonChangePlaylistName" layoutX="460.0" layoutY="10.0" mnemonicParsing="false" onAction="#OnRenamePlaylist" prefHeight="25.0" prefWidth="130.0" text="Change playlist name" wrapText="true" />
+      <ListView fx:id="listPlaylistSongs" layoutX="490.0" layoutY="68.0" prefHeight="120.0" prefWidth="100.0" />
+      <ListView fx:id="listPlaylists" layoutX="385.0" layoutY="40.0" prefHeight="150.0" prefWidth="100.0" />
       <TextField layoutX="490.0" layoutY="40.0" opacity="0.6" prefHeight="25.0" prefWidth="100.0" text="playlist name" />
-      <Label layoutX="390.0" layoutY="15.0" text="Playlists" />
-      <Button layoutX="266.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" text="&gt;&gt;" />
-      <Button layoutX="176.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" text="&lt;&lt;" />
-      <Button layoutX="221.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="|&gt;" />
-      <TextField layoutX="164.0" layoutY="41.0" text="current song name" />
-      <Label layoutX="166.0" layoutY="19.0" prefHeight="18.0" prefWidth="150.0" text="Now playing..." />
-      <Button layoutX="10.0" layoutY="200.0" mnemonicParsing="false" text="Add song to queue" />
-      <Button layoutX="131.0" layoutY="200.0" mnemonicParsing="false" text="Add album to queue" />
+      <Label fx:id="labelPlaylists" layoutX="390.0" layoutY="15.0" text="Playlists" />
+      <Button fx:id="buttonNextSong" layoutX="266.0" layoutY="70.0" mnemonicParsing="false" onAction="#OnNextSong" prefHeight="25.0" prefWidth="35.0" text="&gt;&gt;" />
+      <Button fx:id="buttonPreviousSong" layoutX="176.0" layoutY="70.0" mnemonicParsing="false" onAction="#OnPreviousSong" prefHeight="25.0" prefWidth="35.0" text="&lt;&lt;" />
+      <Button fx:id="buttonPlayPause" layoutX="221.0" layoutY="70.0" mnemonicParsing="false" onAction="#OnPlayPause" prefHeight="25.0" prefWidth="30.0" text="|&gt;" />
+      <TextField fx:id="textCurrentSongName" disable="true" layoutX="164.0" layoutY="41.0" opacity="0.6" text="current song name" />
+      <Label fx:id="labelPlaying" layoutX="166.0" layoutY="19.0" prefHeight="18.0" prefWidth="150.0" text="Now playing..." />
+      <Button fx:id="buttonSongToQueue" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onAction="#OnAddSongToQueue" text="Add song to queue" />
+      <Button fx:id="buttonAlbumToQueue" layoutX="131.0" layoutY="200.0" mnemonicParsing="false" onAction="#OnAddAlbumToQueue" text="Add album to queue" />
+      <Button fx:id="buttonSongToPlaylist" layoutX="374.0" layoutY="200.0" mnemonicParsing="false" onAction="#OnAddSongToPlaylist" text="Add song to playlist" />
+      <Button fx:id="buttonClearQueue" layoutX="121.0" layoutY="149.0" mnemonicParsing="false" onAction="#OnClearQueue" text="Empty queue" />
+       <TextField fx:id="textFunction" disable="true" layoutX="126.0" layoutY="115.0" prefHeight="26.0" prefWidth="252.0" text="Description of function" />
    </children>
 </AnchorPane>
